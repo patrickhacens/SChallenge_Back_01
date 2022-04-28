@@ -46,6 +46,7 @@ Sua aplicação deverá atender o protocolo HTTP/S
 > Os eventos deverão possuir os seguintes dados:
 >- Identificador
 >- Nome do evento
+>- Número de participantes
 >- Data de acontecimento
 >- Duração do evento
 >- Criador
