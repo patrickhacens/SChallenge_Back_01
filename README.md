@@ -59,7 +59,7 @@ Sua aplicação deverá atender o protocolo HTTP/S
 #### Listar
 > 
 > Deverá receber a quantidade de itens e página usados para a paginação
-> e data minima e máxima usados como filtro através do queryparams  
+> e data minima e máxima (opcionais) usados como filtro através do queryparams  
 > e retornar alem da lista (simplificada) paginada informações sobre a quantidade total de itens.
 > 
 
