@@ -52,16 +52,15 @@ Sua aplicação deverá atender o protocolo HTTP/S
 >- Criador
 
 #### Cadastrar
-
 > 
 > Deverá receber os dados do evento, exceto criador, e cadastra-lo, a informação do criador do evento deverá pega automaticamente através do usuário autenticado e esse endpoint só poderá ser acessado por usuário autenticados.
 > 
 
 #### Listar
-
 > 
-> Deverá receber a quantidade de itens e página como query params e retornar alem da lista (simplificada) 
-> paginada informações sobre a quantidade total de itens.
+> Deverá receber a quantidade de itens e página usados para a paginação
+> e data minima e máxima usados como filtro através do queryparams  
+> e retornar alem da lista (simplificada) paginada informações sobre a quantidade total de itens.
 > 
 
 #### Detalhar
@@ -70,7 +69,6 @@ Sua aplicação deverá atender o protocolo HTTP/S
 > 
 
 #### Editar
-
 > 
 > Deverá receber o identificador do evento a ser alterado e os novos dados do evento no payload da requisição.
 > 
@@ -90,7 +88,12 @@ Sua aplicação deverá atender o protocolo HTTP/S
 #### Eventos por usuário
 > 
 > Deverá retornar uma lista com o usuário e a quantidade de eventos que eles criaram.
-> 
+>
+
+#### Top 10 eventos com mais participantes
+>
+> Deverá retornar uma lista com os 10 eventos com mais participantes ordernados do maior para o menor
+>
 
 ### Swagger
 > 
