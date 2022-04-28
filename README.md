@@ -14,7 +14,7 @@ Será avaliado o funcionamento dos requisitos, código, design patterns e arquit
 ## Requisitos
 Para atingir os requisitos abaixo descritos você pode adicionar quantos projetos/bibliotecas achar necessário. 
 
-É requerido apenas os **endpoints** das funcionalidades então não é necessário se preucupar com interfaces visuais.
+É requerido apenas os **endpoints** das funcionalidades então não é necessário se preocupar com interfaces visuais.
 
 Sua aplicação deverá atender o protocolo HTTP/S
 
