@@ -51,6 +51,12 @@ Sua aplicação deverá atender o protocolo HTTP/S
 >- Duração do evento
 >- Criador
 
+#### Cadastrar
+
+> 
+> Deverá receber os dados do evento, exceto criador, e cadastra-lo, a informação do criador do evento deverá pega automaticamente através do usuário autenticado e esse endpoint só poderá ser acessado por usuário autenticados.
+> 
+
 #### Listar
 
 > 
@@ -75,6 +81,7 @@ Sua aplicação deverá atender o protocolo HTTP/S
 > 
 
 ### Dashboard
+
 #### Eventos Anuais
 > 
 > Deverá receber o ano e retornar por mês a quantidade de eventos que aconteceram naquele ano.
