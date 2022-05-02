@@ -107,5 +107,5 @@ Sua aplicação deverá atender o protocolo HTTP/S
 
 ## Entrega
 Você deverá criar um pull request com suas alterações para esse repositório.
-**É necessário apontar o e-mail usado no processo seletivo dentro do arquivo README.md**
+**É necessário apontar o e-mail usado no processo seletivo dentro do arquivo README.md**.
 Qualquer outras informação que você queira compartilhar sobre como alguma requisito funciona ou algo que seja necessário você pode descrever no seu README.md
