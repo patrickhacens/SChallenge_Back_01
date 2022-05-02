@@ -20,6 +20,12 @@ namespace SChallenge.Features.Users
             this.mediator = mediator;
         }
 
+        [HttpGet]
+        public Task<ResultOf<PageResult<UserDTO>>> GetAll([FromQuery] ListUserRequest ListUserRequest, CancellationToken cancellationToken)
+        {
+            return mediator.Send(ListUserRequest, cancellationToken);
+        }
+
         [HttpPost]
         public Task<ResultOf<int>> CreateClient([FromBody] CreateUserRequest createUserRequest, CancellationToken cancellationToken)
         {
