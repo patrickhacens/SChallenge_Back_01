@@ -1,5 +1,6 @@
 ﻿using Mapster;
 using MediatR;
+using Nudes.Retornator.AspnetCore.Errors;
 using Nudes.Retornator.Core;
 using SChallenge.Domain;
 using System.Security.Claims;
@@ -22,7 +23,11 @@ namespace SChallenge.Features.Events.CreateEvent
 
             string datetime = $"{request.Date} {request.Time}";
 
-            ev.Date = DateTime.Parse(datetime);
+            DateTime date = new();
+            if(!DateTime.TryParse(datetime,out date)){
+                return new BadRequestError().AddFieldErrors($"{nameof(request.Date)} and/or {nameof(request.Time)}", "Invalid format for 'date' or 'time'.");
+            };
+            ev.Date = date;
 
             ev.CreatorId = int.Parse(httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier).Value);
 
