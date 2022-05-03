@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nudes.Retornator.Core;
 using SChallenge.Features.Dashboard.EventsPerMonth;
 using SChallenge.Features.Dashboard.EventsPerUser;
+using SChallenge.Features.Dashboard.Top10Events;
 using SChallenge.Models;
 
 namespace SChallenge.Features.Dashboard
@@ -29,6 +30,12 @@ namespace SChallenge.Features.Dashboard
         public Task<ResultOf<List<EventsPerUserDTO>>> EventsPerUser([FromQuery]EventsPerUserRequest eventsPerUSerRequest, CancellationToken cancellationToken)
         {
             return mediator.Send(eventsPerUSerRequest, cancellationToken);
+        }
+
+        [HttpGet("Top10Events")]
+        public Task<ResultOf<List<TopEvents>>> Top10Events([FromQuery] Top10EventsRequest top10EventsRequest, CancellationToken cancellationToken)
+        {
+            return mediator.Send(top10EventsRequest, cancellationToken);
         }
     }
 }
