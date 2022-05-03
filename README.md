@@ -1,111 +1,49 @@
-﻿# SENAI Backend Challenge 01.01
+﻿# SENAI Backend Challenge 01.01 - Lucas Henrique Russo do Nascimento
 
-Este é um desafio de desenvolvimento de software para avaliar suas habilidades relacionadas a area de backend.
+Esta é a entrega do desafio "SENAI Backend Challenge 01.01".
 
-Dentro desse repositório você irá encontrar um projeto web `SChallenge.csproj` recem criado através da DOTNET CLI usando o comando abaixo.
+*Candidato:*
 
-> dotnet new web
-
-Para esse desafio você deverá ***forkar*** esse repositório e altera-lo para habilitar os requisitos abaixo descritos.
-
-## Avaliação
-Será avaliado o funcionamento dos requisitos, código, design patterns e arquitetura, então não só o requisito funcional será avaliado como também toda a infraestrutura de código e algoritmos para atingir o funcionamento do requisito, por isso é recomendado que considere esse desafio, mesmo que pequeno, como um projeto de alta complexidade e mostre suas capacidades como desenvolvedor.
-
-## Requisitos
-Para atingir os requisitos abaixo descritos você pode adicionar quantos projetos/bibliotecas achar necessário. 
-
-É requerido apenas os **endpoints** das funcionalidades então não é necessário se preocupar com interfaces visuais.
-
-Sua aplicação deverá atender o protocolo HTTP/S
-
-### Autenticação
-> 
-> Deverá retornar um token que permita a autenticação e autorização do portador desse token.
-> No seu repositório você deverá descrever como a sua aplicação espera que esse token seja enviado.
-> 
-
-### Gestão de usuários
-
-#### Listar
-> 
-> Deverá retornar uma lista com os dados não sensiveis dos usuários cadastrados.
-> 
-
-#### Criar
-> 
-> Deverá receber as informações de um usuário e cadastra-lo, sendo disponibilizado no endpoint de listagem.
-> 
-
-#### Remover
-> 
-> Deverá receber o identificador do usuário e remove-lo, impossibilitando a listagem e autenticação dele.
-> 
-
-### Gestão de eventos
-#### Dados
-> Os eventos deverão possuir os seguintes dados:
->- Identificador
->- Nome do evento
->- Número de participantes
->- Data de acontecimento
->- Duração do evento
->- Criador
-
-#### Cadastrar
-> 
-> Deverá receber os dados do evento, exceto criador, e cadastra-lo, a informação do criador do evento deverá pega automaticamente através do usuário autenticado e esse endpoint só poderá ser acessado por usuário autenticados.
-> 
-
-#### Listar
-> 
-> Deverá receber a quantidade de itens e página usados para a paginação
-> e data minima e máxima (opcionais) usados como filtro através do queryparams  
-> e retornar alem da lista (simplificada) paginada informações sobre a quantidade total de itens.
-> 
-
-#### Detalhar
-> 
-> Deverá receber o identificador do evento e trazer os dados completo desse evento.
-> 
-
-#### Editar
-> 
-> Deverá receber o identificador do evento a ser alterado e os novos dados do evento no payload da requisição.
-> 
-
-#### Remover
-> 
-> Deverá receber o identificador do evento e remove-lo.
-> 
-
-### Dashboard
-
-#### Eventos Anuais
-> 
-> Deverá receber o ano e retornar por mês a quantidade de eventos que aconteceram naquele ano.
-> 
-
-#### Eventos por usuário
-> 
-> Deverá retornar uma lista com o usuário e a quantidade de eventos que eles criaram.
+>Nome: Lucas Henrique Russo do Nascimento
 >
+>Email: lucnascimento98@gmail.com
 
-#### Top 10 eventos com mais participantes
->
-> Deverá retornar uma lista com os 10 eventos com mais participantes ordernados do maior para o menor
->
+# Informações sobre os entregáveis
 
-### Swagger
-> 
-> Deverá haver um endpoint de documentação swagger ou openapi equivalente, você deverá documentar no seu README.md como acessa-la.
-> 
+Todos os endpoints foram realizados. Cada um possui sua documentação swagger em 
+>[endereço_ip]:[porta] /swagger
 
-### Seeding
-> 
-> Deverá haver uma forma, seja endpoint ou script para que o haja uma injeção inicial de dados para testes da API, documente como utilizar essa forma de seeding no seu README.md.
-> 
+sendo [`endereço_ip`] e [`porta`] os dados da máquina onde a API está em rodando
+## appsettings.local.json
 
-## Entrega
-Você deverá criar um pull request com suas alterações para esse repositório.
-**É necessário apontar o e-mail usado no processo seletivo dentro do arquivo README.md**.
-Qualquer outras informação que você queira compartilhar sobre como alguma requisito funciona ou algo que seja necessário você pode descrever no seu README.md
+Usualmente este arquivo não seria commitado junto ao restante do projeto. Porém neste caso isso se fez necessario pois ele possui uma string que gera/verifica os Tokens JWT. É sabido que esta seria uma informação sigilosa numa situação real de entrega de projeto e, portanto, seria compartilhado de outra maneira.
+
+## Endpoints com autorização
+Alguns endpoints necessitam de autorização. São eles `POST/Event` , `PUT/Event/{Id}` e `DEL/Event/{Id}` 
+
+A autorização é concedida atraves do endpoint de autenticação em `POST/Authentication`
+
+Este endpoint gera um Token JWT, que possui as informações de autorização e que deve ser passado pelo header para as outras requisições que necessitarem dele.
+
+Para facilitar os testes destes endpoints especificos estou entregando um arquivo **.postman_collection.json** que tem esses endpoints pré-configurados com a autorização na aba `Authorization`, basta colar Token no campo 'Token'. Este arquivo também possui o restante dos endpoints que nao precisam de autorização.
+
+***Lembrete:*** Quando usar o arquivo do postman, trocar o endereço IP e porta para o endereço e porta adequados.
+
+## Parametros de data e hora nos endpoints
+
+Alguns endpoints precisam de um input de data e/ou hora. São eles `POST/Event` , `GET/Event` e `PUT/Event/{Id}`.
+
+Esses inputs devem seguir o formato:
+
+>Data: "dd/MM/aaaa"
+
+>Hora: "hh:mm" ou "hh:mm:ss"
+
+## Endpoint de Seeding
+
+O endpoint e seeding do banco foi feito com a biblioteca Bogus (https://github.com/bchavez/Bogus).
+Os usuarios gerados sao usuarios aleatórios, assim como os eventos.
+Os nomes de cada evento são sentencas *Lorem Ipsun* aleatórias.
+As datas de cada evento são randomizadas entre 01/01/2000 e 31/12/2022.
+
+-----------------------------------------------

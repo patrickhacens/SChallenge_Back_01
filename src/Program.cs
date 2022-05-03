@@ -24,7 +24,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "SENAI Backend Challenge 01.01",
-        Description = "Esta API foi construida com o objetivo de testar o autor nas suas habilidades de desenvolvimento de software em backend, " +
+        Description = "Esta API foi construida com o objetivo de testar o candidato nas suas habilidades de desenvolvimento de software em backend, " +
                     "para possivel aprovação em processo seletivo de contratação.",        
     });
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
