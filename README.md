@@ -1,6 +1,6 @@
 ﻿# SENAI Backend Challenge 01.01 - Lucas Henrique Russo do Nascimento
 
-Esta é a entrega do desafio "SENAI Backend Challenge 01.01".
+Esta é a entrega do desafio "SENAI Backend Challenge 01.01", disponivel em: https://github.com/patrickhacens/SChallenge_Back_01.
 
 *Candidato:*
 

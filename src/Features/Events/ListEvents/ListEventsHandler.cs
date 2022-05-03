@@ -20,11 +20,10 @@ namespace SChallenge.Features.Events.ListEvents
         public async Task<ResultOf<PageResult<EventSimpleDTO>>> Handle(ListEventsRequest request, CancellationToken cancellationToken)
         {
             var events = db.Events.Include(x => x.Creator).AsQueryable();
-            var MinDate = new DateTime();
-            var MaxDate = new DateTime();
 
             if (!String.IsNullOrWhiteSpace(request.MinDate))
             {
+                var MinDate = new DateTime();
                 if(!DateTime.TryParse(request.MinDate, out MinDate))
                 {
                     return new BadRequestError().AddFieldErrors(nameof(request.MinDate), "Invalid format for 'MinDate'. ");
@@ -34,6 +33,7 @@ namespace SChallenge.Features.Events.ListEvents
             
             if (!String.IsNullOrWhiteSpace(request.MaxDate))
             {
+                var MaxDate = new DateTime();
                 if (!DateTime.TryParse(request.MaxDate, out MaxDate))
                 {
                     return new BadRequestError().AddFieldErrors(nameof(request.MaxDate), "Invalid format for 'MaxDate'. ");
