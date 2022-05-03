@@ -21,7 +21,9 @@ Usualmente este arquivo não seria commitado junto ao restante do projeto. Poré
 ## Endpoints com autorização
 Alguns endpoints necessitam de autorização. São eles `POST/Event` , `PUT/Event/{Id}` e `DEL/Event/{Id}` 
 
-A autorização é concedida atraves do endpoint de autenticação em `POST/Authentication`
+A autorização é concedida atraves do endpoint de autenticação em `POST/Authentication`.
+
+>**Obs:** As senhas dos usuarios gerados pelo endpoint de seed foram fixadas fixadas em "123abc" para facilitar os testes.
 
 Este endpoint gera um Token JWT, que possui as informações de autorização e que deve ser passado pelo header para as outras requisições que necessitarem dele.
 
@@ -45,5 +47,7 @@ O endpoint e seeding do banco foi feito com a biblioteca Bogus (https://github.c
 Os usuarios gerados sao usuarios aleatórios, assim como os eventos.
 Os nomes de cada evento são sentencas *Lorem Ipsun* aleatórias.
 As datas de cada evento são randomizadas entre 01/01/2000 e 31/12/2022.
+
+As senhas dos usuários gerados pelo seed foram fixadas com a string "123abc".  Caso deseje testar um usuario com uma senha diferente dessa basta criá-lo no endpoint `POST/Users`
 
 -----------------------------------------------
