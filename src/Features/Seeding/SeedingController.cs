@@ -15,6 +15,12 @@ namespace SChallenge.Features.Seeding
             this.mediator = mediator;
         }
 
+        /// <summary>
+        /// Clear previous database and seeds it with a desired amount of random users and events.
+        /// </summary>
+        /// <param name="seedingRequest"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpPost]
         public Task<Result> Seeding(SeedingRequest seedingRequest, CancellationToken cancellationToken)
         {
