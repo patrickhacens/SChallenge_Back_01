@@ -36,7 +36,8 @@ namespace SChallenge.Features.Seeding
             var user = new Faker<User>()
                 .RuleFor(x => x.Name, f => f.Name.FirstName())
                 .RuleFor(x => x.Email, (f, x) => f.Internet.Email(x.Name))
-                .RuleFor(x => x.PasswordHash, f => BCrypt.Net.BCrypt.HashPassword(password));
+                .RuleFor(x => x.PasswordHash, f => BCrypt.Net.BCrypt.HashPassword(password))
+                .RuleFor(x => x.UserActive, f => true);
 
             List<User> Users = user.Generate(amountOfUsers);
 
