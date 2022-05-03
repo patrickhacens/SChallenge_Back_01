@@ -39,6 +39,16 @@ namespace SChallenge.Features.Users
         /// <param name="createUserRequest"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     POST / Users
+        ///     {
+        ///         "name": "Lucas",
+        ///         "email": "lucas@gmail.com",
+        ///         "password": "123abc"
+        ///     }
+        /// </remarks>
         [HttpPost]
         public Task<ResultOf<int>> CreateClient([FromBody] CreateUserRequest createUserRequest, CancellationToken cancellationToken)
         {

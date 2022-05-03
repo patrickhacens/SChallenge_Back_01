@@ -21,6 +21,15 @@ namespace SChallenge.Features.Seeding
         /// <param name="seedingRequest"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     POST / Seeding
+        ///     {
+        ///         "amountOfUsers": 10,
+        ///         "amountOfEvents": 100,
+        ///     }
+        /// </remarks>
         [HttpPost]
         public Task<Result> Seeding(SeedingRequest seedingRequest, CancellationToken cancellationToken)
         {

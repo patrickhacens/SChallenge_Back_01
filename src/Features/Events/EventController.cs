@@ -56,6 +56,18 @@ namespace SChallenge.Features.Events
         /// <param name="createEventRequest"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     POST / Event
+        ///     {
+        ///         "name": "Entrega Senai Challenge",
+        ///         "numOfParticipants": 10,
+        ///         "date": "03/05/2022",
+        ///         "time": "18:00",
+        ///         "duration": 1
+        ///     }
+        /// </remarks>
         /// <response code ="200"> Event Id</response>
         /// <response code ="401"> User not authenticated</response>
         /// <response code ="400"> Date ou Time with invalid format</response>
@@ -73,6 +85,18 @@ namespace SChallenge.Features.Events
         /// <param name="editEventRequestDTO"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     PUT / Event / {Id}
+        ///     {
+        ///         "name": "Entrega Senai Challenge",
+        ///         "numOfParticipants": 10,
+        ///         "date": "03/05/2022",
+        ///         "time": "18:00",
+        ///         "duration": 1
+        ///     }
+        /// </remarks>
         /// <response code ="200"> Event Id</response>
         /// <response code ="401"> User not authenticated or unauthorized</response>
         /// <response code ="400"> Date ou Time with invalid format</response>
