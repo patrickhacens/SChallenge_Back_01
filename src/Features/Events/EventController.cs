@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nudes.Paginator.Core;
 using Nudes.Retornator.Core;
 using SChallenge.Features.Events.CreateEvent;
+using SChallenge.Features.Events.DetailEvent;
 using SChallenge.Features.Events.ListEvents;
 using SChallenge.Models;
 
@@ -25,6 +26,12 @@ namespace SChallenge.Features.Events
         public Task<ResultOf<PageResult<EventSimpleDTO>>> ListEvent([FromQuery]ListEventsRequest listEventsRequest, CancellationToken cancellationToken)
         {
             return mediator.Send(listEventsRequest, cancellationToken);
+        }
+
+        [HttpGet("{Id}")]
+        public Task<ResultOf<EventDetailDTO>> DetailEvent([FromRoute] DetailEventRequest detailEventsRequest, CancellationToken cancellationToken)
+        {
+            return mediator.Send(detailEventsRequest, cancellationToken);
         }
 
         [Authorize]
