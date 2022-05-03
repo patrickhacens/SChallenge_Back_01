@@ -28,7 +28,7 @@ namespace SChallenge.Features.Users
         /// <param name="cancellationToken"></param>
         /// <returns>Returns a paginated list of users</returns>
         [HttpGet]
-        public Task<ResultOf<PageResult<UserDTO>>> GetAll([FromQuery] ListUserRequest ListUserRequest, CancellationToken cancellationToken)
+        public Task<ResultOf<PageResult<UserDTO>>> ListUsers([FromQuery] ListUserRequest ListUserRequest, CancellationToken cancellationToken)
         {
             return mediator.Send(ListUserRequest, cancellationToken);
         }
@@ -50,7 +50,7 @@ namespace SChallenge.Features.Users
         ///     }
         /// </remarks>
         [HttpPost]
-        public Task<ResultOf<int>> CreateClient([FromBody] CreateUserRequest createUserRequest, CancellationToken cancellationToken)
+        public Task<ResultOf<int>> CreateUser([FromBody] CreateUserRequest createUserRequest, CancellationToken cancellationToken)
         {
             return mediator.Send(createUserRequest, cancellationToken);
         }
@@ -64,7 +64,7 @@ namespace SChallenge.Features.Users
         /// <response code ="200"> User set as inactive</response>
         /// <response code ="401"> User not found</response>
         [HttpDelete("{Id}")]
-        public Task<Result> Delete([FromRoute] DeleteUserRequest deleteUserRequest, CancellationToken cancellationToken)
+        public Task<Result> DeleteUser([FromRoute] DeleteUserRequest deleteUserRequest, CancellationToken cancellationToken)
         {
             return mediator.Send(deleteUserRequest, cancellationToken);
         }
