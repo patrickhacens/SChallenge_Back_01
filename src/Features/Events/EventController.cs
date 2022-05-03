@@ -5,6 +5,7 @@ using Nudes.Paginator.Core;
 using Nudes.Retornator.Core;
 using SChallenge.Features.Events.CreateEvent;
 using SChallenge.Features.Events.DetailEvent;
+using SChallenge.Features.Events.EditEvent;
 using SChallenge.Features.Events.ListEvents;
 using SChallenge.Models;
 
@@ -39,6 +40,19 @@ namespace SChallenge.Features.Events
         public Task<ResultOf<int>> CreateEvent(CreateEventRequest createEventRequest, CancellationToken cancellationToken)
         {
             return mediator.Send(createEventRequest, cancellationToken);
+        }
+
+        [Authorize]
+        [HttpPut("{Id}")]
+        public Task<Result> EditEvent(int Id, EditEventRequestDTO editEventRequestDTO, CancellationToken cancellationToken)
+        {
+            EditEventRequest editEventRequest = new EditEventRequest()
+            {
+                Id = Id,
+                EditEventRequestDTO = editEventRequestDTO
+            };
+
+            return mediator.Send(editEventRequest, cancellationToken);
         }
     }
 }
