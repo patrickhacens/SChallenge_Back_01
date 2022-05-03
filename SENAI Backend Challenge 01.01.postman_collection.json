@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "d5d9d5d2-65eb-4725-8f2f-6fb139775928",
+		"name": "SENAI Backend Challenge 01.01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFudG9uaW5hX0JveWxlQGdtYWlsLmNvbSIsIm5hbWVpZCI6IjEwMSIsIm5iZiI6MTY1MTU5MzgxMiwiZXhwIjoxNjUxNjAxMDEyLCJpYXQiOjE2NTE1OTM4MTJ9.MnutLDR0ds3XcCi5G4TpcXpQXX4uiM6Bm5Y1SsjxP9U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Entrega Senai Challenge\",\r\n  \"numOfParticipants\": 10,\r\n  \"date\": \"03/05/2022\",\r\n  \"time\": \"18:00\",\r\n  \"duration\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7042/Event",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2FzQGx1Yy5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNjUxNTM5NDkxLCJleHAiOjE2NTE1NDY2OTEsImlhdCI6MTY1MTUzOTQ5MX0.caPp__o-rur4qJiDWFOxBgKLz2Y6DzjdE5HjzBryyIE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Evento Teste 3\",\r\n  \"numOfParticipants\": 10,\r\n  \"date\": \"19/08/1998\",\r\n  \"time\": \"9:00\",\r\n  \"duration\": 110\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7042/Event/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Event",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2FzQGx1Yy5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNjUxNTM5NDkxLCJleHAiOjE2NTE1NDY2OTEsImlhdCI6MTY1MTUzOTQ5MX0.caPp__o-rur4qJiDWFOxBgKLz2Y6DzjdE5HjzBryyIE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7042/Event/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Event",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7042/Event",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Event"
+							],
+							"query": [
+								{
+									"key": "MinDate",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "MaxDate",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "Page",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "PageSize",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "Field",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "SortDirection",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "HasSortingData",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7042/Event/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Event",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"email\",\r\n  \"password\": \"123abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7042/Authentication",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Authentication"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Lucas\",\r\n  \"email\": \"lucas@luc.com\",\r\n  \"password\": \"123abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7042/Users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHJpY2tAcGF0cmljay5jb20iLCJyb2xlIjoiMSIsIm5hbWVpZCI6IjIiLCJDbGFpbSI6WyJBZGRQaXp6YSIsIkVkaXRQaXp6YSIsIkRlbGV0ZVBpenphIiwiQWRkVG9wcGluZyIsIkVkaXRUb3BwaW5nIiwiRGVsZXRlVG9wcGluZyIsIkFkZFVzZXJBZG1pbiIsIkdldFVzZXIiLCJHZXRBbGxVc2VyIiwiQ2hhbmdlUGFzc3dvcmQiLCJBZGRSb2xlIiwiRWRpdFJvbGUiLCJHZXRSb2xlIiwiR2V0QWxsUm9sZSIsIkRlbGV0ZVJvbGUiLCJBZGRDbGFpbVRvUm9sZSIsIlJlbW92ZUNsYWltRnJvbVJvbGUiLCJMaXN0Um9sZUNsYWltcyIsIkVkaXRBbGxVc2VyIiwiRGVsZXRlQWxsVXNlciJdLCJuYmYiOjE2NDY4MzQ0MDIsImV4cCI6MTY0Njg0MTYwMiwiaWF0IjoxNjQ2ODM0NDAyfQ.cYDCJpkailVo8jI82bkk44o25Rsa9cImHTDQbKuIp78",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Anderson\",\r\n  \"email\": \"anderson@and.com\",\r\n  \"password\": \"abc123\",\r\n  \"roleId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7042/Users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Users"
+							],
+							"query": [
+								{
+									"key": "Search",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "Page",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "PageSize",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "Field",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "SortDirection",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "HasSortingData",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7042/Users/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Events per month of a year",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7042/Dashboard/EventsPerMonthOfAYear?Year=2020",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Dashboard",
+								"EventsPerMonthOfAYear"
+							],
+							"query": [
+								{
+									"key": "Year",
+									"value": "2020"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Events per user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7042/Dashboard/EventsPerUser",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Dashboard",
+								"EventsPerUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top 10 events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7042/Dashboard/Top10Events",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Dashboard",
+								"Top10Events"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seeding",
+			"item": [
+				{
+					"name": "Seeding",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amountOfUsers\": 10,\r\n  \"amountOfEvents\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7042/Seeding",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7042",
+							"path": [
+								"Seeding"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
