@@ -25,7 +25,7 @@ namespace SChallenge.Features.Events.CreateEvent
 
             DateTime date = new();
             if(!DateTime.TryParse(datetime,out date)){
-                return new BadRequestError().AddFieldErrors($"{nameof(request.Date)} and/or {nameof(request.Time)}", "Invalid format for 'date' or 'time'.");
+                return new BadRequestError().AddFieldErrors($"{nameof(request.Date)}, {nameof(request.Time)}", "Invalid format for 'date' or 'time'.");
             };
             ev.Date = date;
 
