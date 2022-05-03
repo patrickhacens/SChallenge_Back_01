@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nudes.Paginator.Core;
 using Nudes.Retornator.Core;
 using SChallenge.Features.Events.CreateEvent;
+using SChallenge.Features.Events.DeleteEvent;
 using SChallenge.Features.Events.DetailEvent;
 using SChallenge.Features.Events.EditEvent;
 using SChallenge.Features.Events.ListEvents;
@@ -53,6 +54,13 @@ namespace SChallenge.Features.Events
             };
 
             return mediator.Send(editEventRequest, cancellationToken);
+        }
+
+        [Authorize]
+        [HttpDelete("{Id}")]
+        public Task<Result> DeleteEvent([FromRoute]DeleteEventRequest deleteEventRequest, CancellationToken cancellationToken)
+        {
+            return mediator.Send(deleteEventRequest, cancellationToken);
         }
     }
 }
