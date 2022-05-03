@@ -18,7 +18,7 @@ namespace SChallenge.Features.Users.ListUsers
         }
         public async Task<ResultOf<PageResult<UserDTO>>> Handle(ListUserRequest request, CancellationToken cancellationToken)
         {
-            var user = db.Users.AsQueryable();
+            var user = db.Users.AsQueryable().Where(x => x.UserActive == true);
 
             if (!String.IsNullOrWhiteSpace(request.Search))
             {

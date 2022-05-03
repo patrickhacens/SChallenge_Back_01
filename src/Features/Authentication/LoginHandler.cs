@@ -22,7 +22,7 @@ namespace SChallenge.Features.Authentication
         {
             var user = await db.Users.FirstOrDefaultAsync(u => u.Email == request.Email, cancellationToken);
 
-            if (user == null)
+            if (user == null || user.UserActive == false)
                 return new UnauthorizedError();
 
             if (!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))

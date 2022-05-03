@@ -20,8 +20,8 @@ namespace SChallenge.Features.Users.DeleteUser
             if (user is null)
                 return new NotFoundError();
 
+            user.UserActive = false;
 
-            db.Users.Remove(user);
             await db.SaveChangesAsync(cancellationToken);
 
             return Result.Success;

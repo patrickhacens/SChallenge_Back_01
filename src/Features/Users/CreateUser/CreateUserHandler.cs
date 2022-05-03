@@ -19,6 +19,8 @@ namespace SChallenge.Features.Users.CreateUser
 
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
 
+            user.UserActive = true;
+
             db.Users.Add(user);
 
             await db.SaveChangesAsync(cancellationToken);

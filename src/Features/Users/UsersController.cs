@@ -22,7 +22,7 @@ namespace SChallenge.Features.Users
         }
 
         /// <summary>
-        /// List users registered in the database. Can filter by name with 'Search' param.
+        /// List active users registered in the database. Can filter by name with 'Search' param.
         /// </summary>
         /// <param name="ListUserRequest"></param>
         /// <param name="cancellationToken"></param>
