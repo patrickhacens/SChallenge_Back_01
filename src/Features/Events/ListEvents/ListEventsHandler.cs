@@ -19,7 +19,7 @@ namespace SChallenge.Features.Events.ListEvents
         }
         public async Task<ResultOf<PageResult<EventSimpleDTO>>> Handle(ListEventsRequest request, CancellationToken cancellationToken)
         {
-            var events = db.Events.AsQueryable();
+            var events = db.Events.Include(x => x.Creator).AsQueryable();
             var MinDate = new DateTime();
             var MaxDate = new DateTime();
 

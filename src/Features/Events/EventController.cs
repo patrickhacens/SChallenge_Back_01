@@ -47,7 +47,7 @@ namespace SChallenge.Features.Events
         [HttpPut("{Id}")]
         public Task<Result> EditEvent(int Id, EditEventRequestDTO editEventRequestDTO, CancellationToken cancellationToken)
         {
-            EditEventRequest editEventRequest = new EditEventRequest()
+            EditEventRequest editEventRequest = new()
             {
                 Id = Id,
                 EditEventRequestDTO = editEventRequestDTO
